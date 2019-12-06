@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Página de post
+  # Página de contato
   RewriteRule ^([a-z0-9-]+)/?$ index.php?$1 [NC,L]
 </IfModule>

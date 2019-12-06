@@ -1,27 +1,36 @@
+
 <?php
-   
-    $loginUser = isset($_SESSION["fake"]["user"][0]["nome"]) ? $_SESSION["fake"]["user"][0]["nome"]:[];
-    // var_dump($loginUser);
-    // exit;
-   
+session_start();
+    //come from de user register function
+    $user = $_SESSION['username'];
+    $user2=$_SESSION["nomeUsuarioLogado"]
+
+
 ?>
+<!-- Starting the header that I'm gonna "include" in my code, so I don't need use the HTML structure-->
 
 <header>
-        <nav class="navbar topo-instagran justify-content-center">
-            <a class="navbar-brand" href="/fake-insta/"><img width="90" src="views/img/logo.png" alt="" srcset="">Instagram</a>
+    <nav class="navbar top-instagram justify-content-center">
+        <a href="#" class="navbar-brand">
+            <img src="views/image/logo.png" alt="Website Logo" srcset="" width="60">Instagram
+        </a>    
 
-            <?php
-            if($loginUser){ ?>
-            <div class= "d-flex mt-3">
-                <p><?php echo "Olá, ".$loginUser; ?></p>
-            </div>
-            <div class= "d-flex ml-3">     
-                <a href="/fake-insta/logout" type="submit" class="btn btn-primary">Logout</a>
-            </div>    
-            <?php }else{ ?>
-                    <a href="/fake-insta/cadastro">Cadastre-se</a>
-                    <a href="/fake-insta/login">Login</a>
-                <?php } ?>
+        
+        <!--Installing the SignUp,SignIn and Logout Button -->
+        <div>
+            
+            <!--This is where is gonna shows up the name of the user when he is logged -->
+            <?php if($_SESSION['user']){ ?>
+            Hello, <?= $_SESSION['user']->username?>
+            <a href="/fake-insta/logout">Logout</a>
+        <?php }else{ ?>
+            <a class="btn btn-signup" href="/fake-insta/sign-up">Register</a>
+            <a class="btn btn-signup" href="/fake-insta/sign-in">Login</a>
+           <?php }?>
+            
+        
+        </div>
+    </nav>
 
-        </nav>
+
 </header>

@@ -1,32 +1,31 @@
-body{
-    background-color: #fafafa;
+body {
+    background-color: #fff;
 }
-
-header{
+header {
     height: 10vh;
 }
-
-.top-instagram{
+.top-instagram {
     background-color: #fff;
-    border: 1px solid rgba(0,0,0, 0.4);
+    border: 1px solid rgba(201, 157, 157, 0.4);
     box-shadow: -2px -2px 10px;
     color: black;
 }
 
-.top-instagram a{
+.top-instagram a {
     color: black;
 }
 
 .board{
-    background:#fff;
+    background: #fff;
     height: 90vh;
     width: 50%;
-    margin: 0 auto;
+    margin:auto;
     padding: 20px;
+    
 }
 
 .float-button{
-    color:black;
+    color: black;
     border: 1px solid black;
     border-radius: 980px;
     font-size: 40px;
@@ -46,12 +45,13 @@ header{
 }
 
 .float-button:active{
-    color: #fff;
+    color:#fff;
     background-color: palevioletred;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
     transition: 0.3s;
 }
-#cardimg{
+
+#cardimg {
     max-width: 100%;
 }

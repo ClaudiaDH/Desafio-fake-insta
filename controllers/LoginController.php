@@ -1,36 +1,75 @@
 <?php 
-include_once "models/LoginUsuario.php";
-class LoginController{
-    public function acao($rotas){
-        switch($rotas){
-        case "login":
-            $this->viewLogin();
-        break;
-        
-        case "login-user":
-            $this->loginUsuario();
-        break;
+    session_start();
+    //including the Login.php connection 
+    include "models/Login.php";
+   
+
+
+
+    class LoginController {
+        //function to deal with the route of the use login.
+        public function action($routes){
+            switch ($routes) {
+                //opening the sign up view
+                
+                case 'sign-in':
+                    $this->viewSignIn();
+                break;
+                case 'user-signIn':
+                    $this->userSignIn();
+                break;
+                case "logout":
+                    $this->logout();
+                break;
+  
+            }
         }
-    }
-    public function viewLogin(){
-        include "views/loginUsuario.php";
-    }
-    private function loginUsuario(){
-        session_start();
-    
-        //acessa tabela usuario
-        $user = new LoginUsuario();
-        $resultado = $user->loginUser($_POST['email'],$_POST['senha']);
-        $senha = password_verify($_POST['senha'], $resultado[0]['senha']);
-      
-        if($senha){
-            $_SESSION['fake']['user'] = $resultado;
-            header('Location:/fake-insta/posts');
-        } else {
+        private function viewSignIn(){
+            include "views/signIn.php";
+        }
+
+        //function to compare the data
+        private function userSignIn(){
+            $login = new Login();
+            //getting the email from the input 
+            $email = $_POST['email'];
             
-            $_SESSION['loginError'] = "NÃO LOGADO";
-            header('Location:login');
+            //using the authentication function to send de email get in the input
+            $result = $login->userAuthentication($email);
+            
+
+            $pass = password_verify($_POST['pass'],$result[0]['pass']);
+           
+            if($pass){  
+               
+                
+                $_SESSION["nomeUsuarioLogado"] = [$result[0]["username"]];
+
+                $_SESSION["idUsuarioLogado"] = [$result[0]["id"]];
+
+
+
+
+                
+                
+
+                
+                   
+                header('Location:/fake-insta/posts');
+                }else{
+                echo "E-mail ou senha inválidos =(";
+                }
         }
-    }
-}
+        //user logout function
+        private function logout(){
+           
+            session_destroy();
+            header('Location:/fake-insta/posts');
+        }
+
+            
+
+     }
+
+    
 ?>

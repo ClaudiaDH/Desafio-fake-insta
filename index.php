@@ -1,57 +1,52 @@
 <?php
+    $routes = key($_GET)?key($_GET):'posts';
 
-    $rotas = key($_GET)?key($_GET):"posts";
-
-    switch($rotas){
-        case "posts":
+    switch($routes){
+        case 'posts':
             include "controllers/PostController.php";
             $controller = new PostController();
-            $controller->acao($rotas);
+            $controller->action($routes);
         break;
-
-        case "formulario-post":
+        case 'post-form':
             include "controllers/PostController.php";
-            $controller =  new PostController();
-            $controller->acao($rotas);
+            $controller = new PostController();
+            $controller->action($routes);
         break;
-
-        case "cadastrar-post":
+        case 'register-post':
             include "controllers/PostController.php";
-            $controller =  new PostController();
-            $controller->acao($rotas);
+            $controller = new PostController();
+            $controller->action($routes);
         break;
-        case "cadastrar-user":
-            include "controllers/UsuarioController.php";
-            $controller = new UsuarioController();
-            $controller->acao($rotas);
+        case 'sign-up':
+            include "controllers/UserController.php";
+            $controller = new UserController();
+            $controller->action($routes);
         break;
-        case "cadastro":
-            include "controllers/UsuarioController.php";
-            $controller = new UsuarioController();
-            $controller->acao($rotas);
+        case 'user-register':
+            include "controllers/UserController.php";
+            $controller = new UserController();
+            $controller->action($routes);
         break;
-        case "login-user": //para pegar as informções
+        case 'sign-in':
             include "controllers/LoginController.php";
             $controller = new LoginController();
-            $controller->acao($rotas);
+            $controller->action($routes);
         break;
-        case "login": //visualizar
+        case 'user-signIn':
             include "controllers/LoginController.php";
             $controller = new LoginController();
-            $controller->acao($rotas);
+            $controller->action($routes);
         break;
-        case "logout":
-            include "controllers/LogoutController.php";
-            $controller = new LogoutController();
-            $controller->acao($rotas);
+        case 'logout':
+            include "controllers/LoginController.php";
+            $controller = new LoginController();
+            $controller->action($routes);
         break;
-
-      
-       
-        
-        
-        
     }
+
+    
+
+
 
 
 ?>
