@@ -37,6 +37,7 @@ class PostController {
         $post = new Post();
         //get information through the method POST from the input name="description "
         $description = $_POST['descript'];
+        
         /*Dealing with Images*/
         $fileName = $_FILES ['img']['name'];
         $linkTemp = $_FILES ['img']['tmp_name'];

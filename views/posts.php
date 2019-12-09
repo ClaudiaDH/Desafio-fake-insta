@@ -30,11 +30,12 @@
 
         <div class="card-body">
             <p class="card-text"><?php echo $post->descript; ?></p>
+            
         </div>
         
     </div>
     <?php endforeach; ?>
-    <a href="#" class="float-button">&#10010;</a>
+    <a href="/fake-insta/post-form" class="float-button">&#10010;</a>
     
 
 

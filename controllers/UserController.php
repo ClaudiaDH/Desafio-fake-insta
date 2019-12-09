@@ -53,7 +53,7 @@
 
                 $_SESSION['user'] = $result;
 
-                header('Location:/fake-insta/sign-in');
+                header('Location:/fake-insta/posts');
             }else{
                 //var_dump($pass);
                 echo "Not today! :(";

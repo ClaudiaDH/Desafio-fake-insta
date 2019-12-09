@@ -48,7 +48,7 @@
             if($senha === $passDb){
                 echo "certo";
                 //var_dump($senha);
-                $_SESSION['email'] = $result;
+                $_SESSION['username'] = $result;
                 header('Location:/fake-insta/posts');
 
             }else{
