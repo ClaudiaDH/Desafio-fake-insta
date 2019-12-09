@@ -15,6 +15,7 @@
                 case 'user-register':
                     $this->userRegister();
                 break;
+               
                 
   
             }
@@ -33,8 +34,9 @@
             //getting the information from the Post method.
             $username = $_POST['username'];
             $email = $_POST['email'];
+            $password = $_POST['pass'];
             // *** need to criptography the password
-            $passhash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+            $passhash = md5($password);
 
             
 
@@ -45,7 +47,7 @@
             //validating
             if($result){
                 $username = $_POST['username'];
-                $user = new User();
+                $user = new User;
                 //get the information to send to the header.php login
                 $result = $user->getUser($username);
 
@@ -56,11 +58,12 @@
                 //var_dump($pass);
                 echo "Not today! :(";
             }
-
+        }
+            
         }
        
 
-    }
+    
 
 
 

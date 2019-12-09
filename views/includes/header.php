@@ -2,8 +2,8 @@
 <?php
 session_start();
     //come from de user register function
-    $user = $_SESSION['username'];
-    $user2=$_SESSION["nomeUsuarioLogado"]
+    $user = $_SESSION['user'];
+    $email=  $_SESSION["email"];
 
 
 ?>
@@ -20,10 +20,13 @@ session_start();
         <div>
             
             <!--This is where is gonna shows up the name of the user when he is logged -->
-            <?php if($_SESSION['user']){ ?>
-            Hello, <?= $_SESSION['user']->username?>
+            <?php if($email){ ?>
+            Hello, <?php echo $email[0][email]; ?>
             <a href="/fake-insta/logout">Logout</a>
-        <?php }else{ ?>
+        <?php }else if($user){?>
+            Hello,<?php echo $user->username ; ?>
+            <a href="/fake-insta/logout">Logout</a>
+            <?php }else{ ?>
             <a class="btn btn-signup" href="/fake-insta/sign-up">Register</a>
             <a class="btn btn-signup" href="/fake-insta/sign-in">Login</a>
            <?php }?>

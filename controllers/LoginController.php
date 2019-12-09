@@ -31,40 +31,41 @@
         //function to compare the data
         private function userSignIn(){
             $login = new Login();
+
             //getting the email from the input 
             $email = $_POST['email'];
-            
+  
             //using the authentication function to send de email get in the input
+            //Get the registered email
             $result = $login->userAuthentication($email);
+
+            //Get de password stored in the db in the variable
+            $passDb = $result[0][pass];
+            //Password typed in the password input.
+            $senha = md5($_POST['pass']);
             
 
-            $pass = password_verify($_POST['pass'],$result[0]['pass']);
-           
-            if($pass){  
-               
-                
-                $_SESSION["nomeUsuarioLogado"] = [$result[0]["username"]];
-
-                $_SESSION["idUsuarioLogado"] = [$result[0]["id"]];
-
-
-
-
-                
-                
-
-                
-                   
+            if($senha === $passDb){
+                echo "certo";
+                //var_dump($senha);
+                $_SESSION['email'] = $result;
                 header('Location:/fake-insta/posts');
-                }else{
-                echo "E-mail ou senha inválidos =(";
-                }
+
+            }else{
+                
+                echo "errado!";
+                var_dump($passDb);
+                
+            }
+            
+
+           
         }
         //user logout function
         private function logout(){
            
             session_destroy();
-            header('Location:/fake-insta/posts');
+            header('Location:/fake-insta/sign-in');
         }
 
             
