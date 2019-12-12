@@ -18,8 +18,8 @@
 
             $db = parent::createConnection();
             //preparing to insert the information into the table.
-            $query = $db->prepare("INSERT INTO posts (img,descript) values (?,?,?)");
-            return $query->execute([$img, $descript]);
+            $query = $db->prepare("INSERT INTO posts (img,descript) values (?,?)");
+            return $query->execute([$img,$descript]);
 
         
         }

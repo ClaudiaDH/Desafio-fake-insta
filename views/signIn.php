@@ -23,7 +23,7 @@
         <h1>Login</h1>
 
         <!-- In the action I need to put the route that Im gonna create to take me to the Post Creation-->
-        <form action="/fake-insta/user-signIn" method="POST" enctype="multipart/form-data">
+        <form action="/Desafio-fake-insta/user-signIn" method="POST" enctype="multipart/form-data">
           
             <div class="form-group">
                 <label for="email">Email</label>

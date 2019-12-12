@@ -1,5 +1,5 @@
 <?php
-    $routes = key($_GET)?key($_GET):'sign-in';
+    $routes = key($_GET)?key($_GET):'posts';
 
     switch($routes){
         case 'posts':

@@ -49,7 +49,7 @@
                 echo "certo";
                 //var_dump($senha);
                 $_SESSION['username'] = $result;
-                header('Location:/fake-insta/posts');
+                header('Location:/Desafio-fake-insta/posts');
 
             }else{
                 
@@ -65,7 +65,7 @@
         private function logout(){
            
             session_destroy();
-            header('Location:/fake-insta/sign-in');
+            header('Location:/Desafio-fake-insta/sign-in');
         }
 
             

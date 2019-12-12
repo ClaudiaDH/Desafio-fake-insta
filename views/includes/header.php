@@ -22,13 +22,13 @@ session_start();
             <!--This is where is gonna shows up the name of the user when he is logged -->
             <?php if($username){ ?>
             Hello, <?php echo $username[0]['username']; ?>
-            <a href="/fake-insta/logout">Logout</a>
+            <a href="/Desafio-fake-insta/logout">Logout</a>
         <?php }else if($user){?>
             Hello,<?php echo $user->username ; ?>
-            <a href="/fake-insta/logout">Logout</a>
+            <a href="/Desafio-fake-insta/logout">Logout</a>
             <?php }else{ ?>
-            <a class="btn btn-signup" href="/fake-insta/sign-up">Register</a>
-            <a class="btn btn-signup" href="/fake-insta/sign-in">Login</a>
+            <a class="btn btn-signup" href="/Desafio-fake-insta/sign-up">Register</a>
+            <a class="btn btn-signup" href="/Desafio-fake-insta/sign-in">Login</a>
            <?php }?>
             
         

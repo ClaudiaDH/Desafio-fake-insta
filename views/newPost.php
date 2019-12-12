@@ -20,10 +20,10 @@
         <h1>Register New Post</h1>
 
         <!-- In the action I need to put the route that Im gonna create to take me to the Post Creation-->
-        <form action="/fake-insta/register-post" method="POST" enctype="multipart/form-data">
+        <form action="/Desafio-fake-insta/register-post" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="exampleFormControlFile1">Example file input</label>
-                <input type="file" name="img" id="exampleFormControlFile1" class="form-control-file" required>
+                <label for="img">Example file input</label>
+                <input type="file" name="img" id="img" class="form-control-file" required>
 
             </div>
 

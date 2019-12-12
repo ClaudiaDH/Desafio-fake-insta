@@ -53,7 +53,7 @@
 
                 $_SESSION['user'] = $result;
 
-                header('Location:/fake-insta/posts');
+                header('Location:/Desafio-fake-insta/posts');
             }else{
                 //var_dump($pass);
                 echo "Not today! :(";

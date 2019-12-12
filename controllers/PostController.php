@@ -36,7 +36,7 @@ class PostController {
         //creating a new Object.
         $post = new Post();
         //get information through the method POST from the input name="description "
-        $description = $_POST['descript'];
+        $descript = $_POST['descript'];
         
         /*Dealing with Images*/
         $fileName = $_FILES ['img']['name'];
@@ -47,16 +47,17 @@ class PostController {
         move_uploaded_file($linkTemp,$savePath);
         /* Image moved */
 
-        $result = $post->createPost($savePath,$description);
+        $result = $post->createPost($savePath,$descript);
 
        
          
         //validation
         if($result){
-            header('Location:/fake-insta/posts');
+            header('Location:/Desafio-fake-insta/posts');
             
         }else{
             echo "Sorry! Something is wrong!";
+            var_dump($result);
         }
     
 

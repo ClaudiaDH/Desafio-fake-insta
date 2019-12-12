@@ -17,7 +17,7 @@
         <h1>Register New User</h1>
 
         <!-- In the action I need to put the route that Im gonna create to take me to the Post Creation-->
-        <form action="/fake-insta/user-register" method="POST" enctype="multipart/form-data">
+        <form action="/Desafio-fake-insta/user-register" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" class="form-control-file" required>
