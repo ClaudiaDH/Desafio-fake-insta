@@ -2,6 +2,14 @@
 
     //create a variable that is gonna to receive the post route from the PostController.
     $posts = $_REQUEST['posts'];
+    
+    session_start();
+    //come from de user register function
+    
+    $username=  $_SESSION["username"];
+
+
+?>
 
 
 ?>
@@ -30,6 +38,10 @@
 
         <div class="card-body">
             <p class="card-text"><?php echo $post->descript; ?></p>
+            <?php if($username){ ?>
+            <p class="card-text"><?php echo $username[0]['username']; ?></p>
+            <?php } ?>
+
             
         </div>
         
